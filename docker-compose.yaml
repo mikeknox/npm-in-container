@@ -1,0 +1,13 @@
+version: '2.3'
+services:
+  npm:
+    image: node:${NODE_VER}
+    build:
+      context: .
+      args:
+        - NODE_ENV
+        - NODE_VER
+        - NPM_TOKEN
+    volumes:
+       - ${PWD}:/usr/src/app
+       - ~/.aws:/root/.aws
